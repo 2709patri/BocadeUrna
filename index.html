@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/assets/img/Number-8.ico" type="image/x-icon">
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>bocadeurna</title>
+    
+    <style>
+     
+        
+      #root {
+         max-width: 1280px;
+         margin: 0 auto;
+         padding: 0;
+         text-align: center;
+       }
+       
+       body {
+         margin: 0;
+         display: flex;
+         place-items: center;
+         box-sizing: border-box;
+       }
+       h1 {
+         font-size: 3.2em;
+         line-height: 1.1;
+       }
+       h2 {
+         font-size: 1.5em;
+         line-height: 1.1;
+         color: #1a1a1a;
+       }
+       p {
+         font-size: 2.5em;
+         line-height: 1.1;
+         color: #1a1a1a;
+       }
+       .candidato,
+       .candidato1 {
+         width: 200px;
+         height: 230px;
+         background-color: white;
+         margin: 10px auto;
+         padding: 10px;
+         display: block;
+         border-radius: 8px;
+       }
+       button {
+         border-radius: 8px;
+         padding: 10px 20px;
+         font-size: large;
+         font-family: inherit;
+         margin: 10px 10px;
+         cursor: pointer;
+         transition: border-color 0.25s;
+         background-color: rgb(42, 147, 238);
+       }
+       button:hover {
+         border-color: black;
+       }
+     @media (prefers-color-scheme: light) {
+         :root {
+           color: antiquewhite;
+           background-color: rgb(42, 147, 238);
+         }
+         a:hover {
+           color: rgb(42, 147, 238);
+         }
+         button {
+           background-color: rgb(42, 147, 238)
+         }
+       }
+     
+     </style>
+
+   <script type="text/babel">
+   
+ function App() {
+        const { useState } = React;
+        const [conteoCandidato1, setConteoCandidato1] = React.useState(0);
+        const [conteoCandidato2, setConteoCandidato2] = React.useState(0);
+        
+        const aumentarCandidato1 = () => {
+          setConteoCandidato1(conteoCandidato1 + 1);
+        };
+
+        const disminuirCandidato1 = () => {
+          if (conteoCandidato1 > 0) {
+            setConteoCandidato1(conteoCandidato1 - 1);
+          }
+        };
+
+        const aumentarCandidato2 = () => {
+          setConteoCandidato2(conteoCandidato2 + 1);
+        };
+
+        const disminuirCandidato2 = () => {
+          if (conteoCandidato2 > 0) {
+            setConteoCandidato2(conteoCandidato2 - 1);
+          }
+        };
+
+        return (
+          <> 
+            <h1>BOCA DE URNAS</h1>
+            <div className='candidato'>
+              <h2>Candidato 1</h2>
+              <p>{conteoCandidato1}</p>
+              <button onClick={disminuirCandidato1}>-</button>
+              <button onClick={aumentarCandidato1}>+</button>
+            </div>
+            <div className='candidato1'>
+              <h2>Candidato 2</h2>
+              <p>{conteoCandidato2}</p>
+              <button onClick={disminuirCandidato2}>-</button>
+              <button onClick={aumentarCandidato2}>+</button>
+            </div>
+            
+          </>
+          );
+        
+      
+      }
+
+
+
+      let root = document.getElementById('root');
+      ReactDOM.render( <App />, root);
+</script>
+   
+  </head>
+  
+  <body>
+    
+    <div id="root"></div>
+    
+    
+</body>       
+ 
+</html>
